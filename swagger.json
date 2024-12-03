@@ -1,0 +1,43 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Swagger Docs for https://developers.facebook.com/docs/graph-api/reference",
+    "version": "0.0.1",
+    "title": "FB Graph API Docs"
+  },
+  "host": "graph.facebook.com",
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "access_token": {
+      "type": "apiKey",
+      "name": "access_token",
+      "in": "query"
+    }
+  },
+  "paths": {
+    "/{AD_ID}": {
+      "get": {
+        "summary": "Get Ad information",
+        "description": "Returns information of a single ad",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "AD_ID",
+            "in": "path",
+            "description": "ID of Ad",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "security": [
+          { "access_token": [] }
+        ]
+      }
+    }
+  }
+}
