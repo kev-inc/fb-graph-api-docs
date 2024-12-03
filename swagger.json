@@ -5,9 +5,13 @@
     "version": "0.0.1",
     "title": "FB Graph API Docs"
   },
-  "host": "graph.facebook.com",
   "schemes": [
     "https"
+  ],
+  "servers": [
+    { "url": "https://graph.facebook.com/v21.0" },
+    { "url": "https://graph.facebook.com/v20.0" },
+    { "url": "https://graph.facebook.com/v19.0" },
   ],
   "securityDefinitions": {
     "access_token": {
