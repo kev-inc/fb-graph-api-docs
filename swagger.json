@@ -34,6 +34,7 @@
             "format": "int64"
           }
         ],
+        "responses": {},
         "security": [
           { "access_token": [] }
         ]
