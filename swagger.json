@@ -22,6 +22,13 @@
   ],
   "tags": [
     {
+      "name": "Ad Account",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://developers.facebook.com/docs/marketing-api/reference/ad-account"
+      }
+    },
+    {
       "name": "Ad Campaign",
       "externalDocs": {
         "description": "Find out more",
@@ -40,6 +47,13 @@
       "externalDocs": {
         "description": "Find out more",
         "url": "https://developers.facebook.com/docs/marketing-api/reference/adgroup"
+      }
+    },
+    {
+      "name": "User",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://developers.facebook.com/docs/graph-api/reference/user/"
       }
     }
   ],
@@ -62,6 +76,133 @@
             "schema": {
               "type": "integer",
               "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          }
+        ]
+      }
+    },
+    "/act_{ad_account_id}": {
+      "get": {
+        "tags": [
+          "Ad Account"
+        ],
+        "summary": "Get info on ad account",
+        "description": "Returns info on ad account",
+        "parameters": [
+          {
+            "name": "ad_account_id",
+            "in": "path",
+            "description": "Ad account ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "id",
+                  "account_id",
+                  "account_status",
+                  "ad_account_promotable_objects",
+                  "age",
+                  "agency_client_declaration",
+                  "amount_spent",
+                  "attribution_spec"
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          }
+        ]
+      }
+    },
+    "/act_{ad_account_id}/campaigns": {
+      "get": {
+        "tags": [
+          "Ad Account"
+        ],
+        "summary": "Get info on campaigns of ad account",
+        "description": "Returns info on campaigns of ad account",
+        "parameters": [
+          {
+            "name": "ad_account_id",
+            "in": "path",
+            "description": "Ad account ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          }
+        ]
+      }
+    },
+    "/me": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Get info on my account",
+        "description": "Returns info on my account",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "id",
+                  "about",
+                  "age_range",
+                  "birthday",
+                  "education",
+                  "email",
+                  "first_name",
+                  "gender"
+                ]
+              }
             }
           }
         ],
